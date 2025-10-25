@@ -9,21 +9,21 @@ export default function Reports() {
 
   return (
     <div className="grid cols-3">
-      <div className="card">
-        <div className="small">Ingresos históricos</div>
-        <div style={{ fontSize: '1.6rem', fontWeight: 800 }}>{fmtCOP(data.ingresos)}</div>
+      <div className="card kpi">
+        <div className="kpi-label">Ingresos históricos</div>
+        <div className="kpi-amount">{fmtCOP(data.ingresos)}</div>
       </div>
-      <div className="card">
-        <div className="small">Egresos históricos</div>
-        <div style={{ fontSize: '1.6rem', fontWeight: 800 }}>{fmtCOP(data.egresos)}</div>
+      <div className="card kpi">
+        <div className="kpi-label">Egresos históricos</div>
+        <div className="kpi-amount">{fmtCOP(data.egresos)}</div>
       </div>
-      <div className="card">
-        <div className="small">Deudas pendientes</div>
-        <div style={{ fontSize: '1.6rem', fontWeight: 800 }}>{fmtCOP(data.deudas)}</div>
+      <div className="card kpi">
+        <div className="kpi-label">Deudas pendientes</div>
+        <div className="kpi-amount">{fmtCOP(data.deudas)}</div>
       </div>
       <div className="card" style={{ gridColumn: '1 / -1' }}>
         <div className="small">
-          * Reporte sin gráficas (como pide el punto extra). Se calcula desde el historial de transacciones y préstamos.
+          * Cálculos derivados del historial de transacciones y préstamos (sin gráficas).
         </div>
       </div>
     </div>
