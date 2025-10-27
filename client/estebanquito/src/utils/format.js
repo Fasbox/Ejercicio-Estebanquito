@@ -1,3 +1,6 @@
+// Convierte los números en currency colombiana, la hora para momentos de transacción y
+// crea un UID para transacciones
+
 export const fmtCOP = (n) =>
   new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(n)
 

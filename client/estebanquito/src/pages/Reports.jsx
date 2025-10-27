@@ -23,7 +23,7 @@ export default function Reports() {
       </div>
       <div className="card" style={{ gridColumn: '1 / -1' }}>
         <div className="small">
-          * Cálculos derivados del historial de transacciones y préstamos (sin gráficas).
+          * Cálculos derivados del historial de transacciones, aún sin gráficas.
         </div>
       </div>
     </div>

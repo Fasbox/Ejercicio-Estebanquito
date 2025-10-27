@@ -1,0 +1,120 @@
+/* =========================
+   LAYOUT (estructura)
+   - Shell de la app: sidebar + main
+   - Contenedores principales
+   - Brand (logo + texto) solo en lo estructural
+   - Grid helpers base (sin media queries)
+   ========================= */
+
+/* --- APP SHELL --- */
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr; /* Sidebar fija + contenido */
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1rem .9rem;
+
+  /* Fondo/transparencias se consideran layout “visual mínimo”.
+     Si prefieres, puedes mover estas 3 líneas a effects.css */
+  background: rgba(11,15,35,.6);
+  backdrop-filter: blur(16px);
+  border-right: 1px solid var(--border);
+}
+
+/* Pie del sidebar (versión, etc.) */
+.side-footer {
+  margin-top: auto;
+  opacity: .7;
+  padding: .4rem .6rem;
+  border-top: 1px dashed var(--border);
+}
+
+/* --- BRAND BLOCK (logo + texto) ---
+   Importante: bloqueamos el ancho del logo a 40px y
+   dejamos el texto ocupar el resto. Esto evita que el
+   texto de dos líneas deforme el logo. */
+.brand {
+  display: grid;
+  grid-template-columns: 40px 1fr; /* logo fijo + texto flexible */
+  align-items: center;
+  column-gap: 0.6rem;
+  padding: 0.4rem 0.2rem 0.8rem;
+}
+
+/* Contenedor del logo: solo estructura.
+   - Efectos (borde gradiente, halo) van en effects.css
+   - Colores/filtros del <img> también en effects.css si los separas */
+.brand-logo {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden; /* recorta imagen dentro del cuadro */
+}
+
+/* Texto de la marca a la derecha, en dos líneas.
+   Estilos finos de tipografía (colores/tamaños) pueden ir a utilities.css,
+   aquí nos quedamos con estructura. */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+/* --- MAIN (columna derecha) --- */
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* evita desbordes horizontales por grids internos */
+}
+
+/* Topbar pegada arriba del main */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: .75rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  /* Estos 3 son “layout visual mínimo”. Puedes moverlos a effects.css si quieres */
+  background: rgba(11,15,35,.55);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.top-actions {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}
+
+/* Contenedor central de páginas */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* --- GRID HELPERS (base, sin responsive aquí) --- */
+.grid { display: grid; gap: 1rem; }
+.grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid.cols-3 { grid-template-columns: repeat(3, 1fr); }

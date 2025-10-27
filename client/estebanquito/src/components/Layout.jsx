@@ -1,6 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext.jsx'
-import chairIcon from '../assets/Chair-Blue.svg'
 
 export default function Layout() {
   const { user, signOut } = useAuth()
@@ -13,9 +12,7 @@ export default function Layout() {
         <aside className="sidebar">
           {/* Marca compacta (logo + texto) */}
           <div className="brand">
-            <div className="brand-logo">
-              <img src={chairIcon} alt="Estebanquito logo" />
-            </div>
+            <div className="brand-logo" aria-hidden="true" />
             <div className="brand-text">
               <strong>Estebanquito</strong>
               <span className="small">Sientete seguro</span>

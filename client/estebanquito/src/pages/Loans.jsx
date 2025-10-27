@@ -43,7 +43,7 @@ export default function Loans() {
           <button className="btn">Solicitar</button>
         </form>
         <p className="small" style={{ marginTop: '.5rem' }}>
-          * Para el demo, el préstamo queda en “pendiente” y el dinero se acredita a tu primera cuenta.
+          * Mientras se monta el backend real para el demo, el préstamo queda en “pendiente” y el dinero se acredita a tu primera cuenta.
         </p>
       </section>
 

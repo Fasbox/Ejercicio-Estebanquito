@@ -8,7 +8,7 @@ export default function Profile() {
       <div><strong>Nombre:</strong> {user.nombre}</div>
       <div><strong>Email:</strong> {user.email}</div>
       <div className="small" style={{ marginTop: '.75rem' }}>
-        * En una versión con backend, aquí irían edición de datos, cambio de clave, etc.
+        * Para cuando esté el backend esta parte estará disponible.
       </div>
     </div>
   )

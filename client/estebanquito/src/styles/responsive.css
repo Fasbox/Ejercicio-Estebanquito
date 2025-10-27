@@ -1,0 +1,48 @@
+/* =========================
+   RESPONSIVE RULES
+   - Mobile-first overrides
+   - Mostrar navegación inferior y FAB
+   - Colapsar sidebar y grillas en pantallas pequeñas
+   ========================= */
+
+/* --- SMALL / MEDIUM (<= 900px) --- */
+@media (max-width: 900px) {
+
+  /* Shell: sin columna fija; solo contenido */
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  /* Oculta sidebar; navegamos con bottomnav */
+  .sidebar {
+    display: none;
+  }
+
+  /* Activa bottomnav (fixed) y FAB */
+  .bottomnav {
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .fab {
+    display: grid;
+  }
+
+  /* Deja aire para la bottomnav */
+  .container {
+    padding-bottom: 70px; /* espacio para que no tape el contenido */
+  }
+
+  /* Grids: colapsar a 1 columna en pantallas pequeñas */
+  .grid.cols-2,
+  .grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- LARGE (>= 900px) ---
+   Nota: ya definimos los layouts base en layout.css.
+   Si quieres ajustes específicos para desktop, puedes ponerlos aquí. */
+@media (min-width: 900px) {
+  /* Ejemplo opcional: aumentar un poco el padding del contenedor en desktop */
+  /* .container { padding: 1.25rem; } */
+}

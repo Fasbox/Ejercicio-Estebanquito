@@ -1,0 +1,71 @@
+/* =========================
+   BASE / GLOBAL FOUNDATION
+   - Saneamiento ligero
+   - Tipografía y colores globales
+   - Fondo de la app (dark)
+   - Comportamientos accesibles
+   ========================= */
+
+/* 1) Saneamiento mínimo y sizing consistente */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2) Altura full para layout basados en viewport */
+html, body, #root {
+  height: 100%;
+}
+
+/* 3) Tipografía y colores globales (usa tokens) */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text);
+
+  /* Fondo: indigo con “glow” radial sutil */
+  background: radial-gradient(60% 80% at 10% 10%, #0d1330, var(--bg));
+  /* Evita “saltos” de ancho cuando aparece scroll */
+  overflow-y: scroll;
+}
+
+/* 4) Enlaces base */
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* 5) Selección de texto (mejora de foco visual) */
+::selection {
+  background: rgba(0, 214, 185, .25); /* brand con transparencia */
+  color: var(--text);
+}
+
+/* 6) Imágenes y medios responsivos por defecto */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 7) Tipografía monoespaciada helper (fallback global) */
+/* Nota: también tendrás .mono en utilities, esto sirve como base */
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+/* 8) Accesibilidad y motion preferences */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
